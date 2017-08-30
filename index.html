@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>IUPT 2018</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<link href="Content/site.css" rel="stylesheet" type="text/css" />
+<link href="Content/Fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+<link href="Content/nivo-slider/nivo-slider.css" rel="stylesheet" type="text/css" />
+<link href="Content/nivo-slider/themes/default/default.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.fancybox-next span {
+	right: -36px;
+}
+.fancybox-prev span {
+	left: -36px;
+}
+</style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="Scripts/jquery.ba-hashchange.min.js" type="text/javascript"></script>
+<script src="Content/Fancybox/jquery.fancybox.js" type="text/javascript"></script>
+<script src="Content/nivo-slider/jquery.nivo.slider.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+$(function () {
+	$(".image-gallery").fancybox({
+		prevEffect: 'none',
+		nextEffect: 'none',
+		helpers: {
+			title: {
+				type: 'outside'
+			},
+			overlay: {
+				opacity: 0.8,
+				css: {
+					'background-color': '#000'
+				}
+			},
+			thumbs: {
+				width: 50,
+				height: 50
+			}
+		}
+	});
+
+	$('#slider').nivoSlider();
+
+	$(window).hashchange(function () {
+		var hash = window.location.hash.slice(2);
+		hashChangedHandler(hash);
+	});
+	$(window).hashchange();
+});
+
+function hashChangedHandler(hash) {
+	if (hash == "Home") {
+		switchPanel("#panel_home");
+	} else if (hash == "OrganizingCommittee") {
+		switchPanel("#panel_committee");
+	} else if (hash == "ImportantDates") {
+		switchPanel("#panel_dates");
+	} else if (hash == "PaperSubmission") {
+		switchPanel("#panel_submission");
+	}
+	else if (hash == "ProgramPage") {
+		switchPanel("#panel_program");
+	}
+}
+
+function switchPanel(currentSelector) {
+	$("#content").find(".current-panel").fadeOut(200, function () {
+		$("#content").find(".current-panel").removeClass("current-panel");
+		//console.log("current fadeout");
+		$(currentSelector).fadeIn(200, function () {
+			//console.log("new fadein");
+			$(currentSelector).addClass("current-panel");
+			$("html, body").animate({scrollTop:$(currentSelector).offset().top}, 500);
+			// $(document).scrollTop($(currentSelector).offset().top)
+		});
+	});
+}
+</script>
+</head>
+
+<body>
+<div id="wrap">
+	<div id="nav_container">
+		<ul>
+			<li class="main-menu"><a href="#/Home">Home</a></li>
+			<li class="separator"></li>
+			<li class="main-menu"><a href="#/OrganizingCommittee">Organizing Committee</a></li>
+			<li class="separator"></li>
+			<li class="main-menu"><a href="#/ImportantDates">Important Dates</a></li>
+			<li class="separator"></li>
+			<li class="main-menu"><a href="#/PaperSubmission">Paper Submission</a></li>
+			<li class="separator"></li>
+			<li class="main-menu"><a href="#/ProgramPage">Program</a></li>
+			<li class="separator"></li>
+			<li class="main-menu"><a href="http://cs-conferences.acadiau.ca/ant-18">ANT2018</a></li>
+		</ul>
+
+	</div>
+	<div id="header">
+		<div class="slider-wrapper theme-default">
+			<div id="slider" class="nivoSlider">
+				<img src="Pictures/porto1.jpg" alt="" height="600" width="900"/>
+				<img src="Pictures/porto2.jpg" alt="" height="600" width="900"/>
+				<img src="Pictures/porto3.jpg" alt="" height="600" width="900"/>
+				<img src="Pictures/porto4.jpg" alt="" height="600" width="900"/>
+			</div>
+			
+		</div>
+		<div id="header_text" style="position:absolute;top:20px;left:20px;right:20px;color:#ffffff;z-index:9999;text-shadow:0 0 5px #000000;">The 8<sup>th</sup> International Symposium on<br />Internet of Ubiquitous and Pervasive Things<br/><strong>(IUPT 2018)</strong></div>
+	</div>
+	<div id="content">
+		<div id="panel_home" class="panel current-panel">
+			<div class="panel-header">
+				<p class="reference">to be held in conjunction<br />with Ambient Systems, Networks and Technologies Conference (<a href="http://cs-conferences.acadiau.ca/ant-18/">ANT 2018</a>)<br />May 8-11, 2018, Porto, Portugal</p>
+				<h1>About IUPT 2018</h1>
+			</div>
+			<div class="panel-content">
+				<div class="section">
+					<div class="section-header">A Brief Introduction</div>
+					<div class="section-content">
+						<p>This symposium aims at gathering researchers from the fields of wireless networking and Internet applications to discuss new opportunities and hurdles to leverage the possibilities of new applications and services for the Internet of Ubiquitous and Pervasive Things.</p>
+						<p>The new developments in this area raise many research questions including interaction, security, collaboration, context, discovery, and privacy of physical things in the virtual world. Despite the tremendous progress in Internet technologies the research community continues to wrestle with some of these questions. This symposium focuses on disseminating novel ideas and research directions in this fast emerging area of the Internet of Things. This symposium also aims to bring together academics and practitioners in an effort to highlight the state-of-the-art and discuss the issues and opportunities to explore new research directions and develop new ideas for the Internet of Things. The symposium will be platform to provide opportunities for researchers from academia and industry to join hands, exchange ideas and focus on solutions that will enhance the life of the growing population on the Internet. It will lead to identifying new directions and setting the scope for developments in this area. The participants will be enlightened with intellectual discussions, highlighting the advances in technology that bridges the physical world and the digital world.</p>
+						<p>The 8<sup>th</sup> International Symposium on Internet of Ubiquitous and Pervasive Things will take place in conjunction with the 9<sup>th</sup> International Conference on Ambient Systems, Networks and Technologies (ANT 2018), May 8-11, 2018, Porto, Portugal.</p>
+					<!--	<p>Accepted papers will be included in the conference proceedings published by Elsevier Science in the open-access Procedia Computer Science series (on-line). Procedia Computer Sciences is hosted on www.Elsevier.com and on Elsevier content platform <a href="http://www.sciencedirect.com"><b><font color="#FF60AF">ScienceDirect</font></b></a>, and will be freely available worldwide. All papers in Procedia will also be indexed by <a href="http://www.scopus.com"><b><font color="#FF60AF">Scopus</font></b></a> and <a href="http://www.engineeringvillage.com"><b><font color="#FF60AF">Engineering Village (Ei) </font></b></a>. This includes <a href="http://www.ei.org/compendex"> <b><font color="#FF60AF">EI Compendex </font></b> </a>. The papers will contain linked references, XML versions and citable DOI numbers. You will be able to provide a hyperlink to all delegates and direct your conference website visitors to your proceedings. All accepted papers will also be indexed in <a href="http://dblp.uni-trier.de/"><b><font color="#FF60AF">DBLP</font></b></a>.</p>
+						
+						<p><font color = "#FF0000"> The extended versions of accepted papers will be invited for potential publication in Open Journal of Internet of Things <a href="https://www.ronpub.com/index.php/journals/ojiot">(OJIOT)</a>, The sooner that authors submit their papers, the sooner that authors get the notification. Every paper, once accepted, will be published immediately.</font></p>
+						-->
+					</div>
+				</div>
+				<div class="section">
+					<div class="section-header">Topics of Interest</div>
+					<div class="section-content">
+						<p>Specific topics of interest include (but not limited to):</p>
+						<ul>
+							<li class="MsoNormal"><span>Communication systems and architectures for the Internet of Things</span></li>
+							<li class="MsoNormal"><span>Robustness of environmental management with the Internet of Things</span></li>
+							<li class="MsoNormal"><span>Future technologies	bridging the physical and virtual worlds</span></li>
+							<li class="MsoNormal"><span>Business models and processes for the Internet of Things</span></li>
+							<li class="MsoNormal"><span>Impacts on the security, privacy and risks on the physical world</span></li>
+							<li class="MsoNormal"><span>Applications and interaction for social networking</span></li>
+							<li class="MsoNormal"><span>Location and discovery of things on the Internet</span></li>
+							<li class="MsoNormal"><span>Smart Objects</span></li>
+							<li class="MsoNormal"><span>Case studies in areas of Healthcare, Agriculture, Logistics and Transport</span></li>
+							<li class="MsoNormal"><span>Green Internet of Things</span></li>
+							<li class="MsoNormal"><span>Mobile Internet of Things</span></li>
+							<li class="MsoNormal"><span>Internet of Services</span></li>
+							<li class="MsoNormal"><span>Sensor Webs</span></li>
+							<li class="MsoNormal"><span>Web of Things</span></li>
+							<li class="MsoNormal"><span>Semantic Web of Things</span></li>
+						</ul>
+					</div>
+					<div class="section-header">Contact Us</div>
+					<div class="section-content">
+					     <p>Please do not hesitate to contact us if you require any further information</p>
+					     <p>Yongrui (Louie) Qin: y.qin2@hud.ac.uk</p>
+						 <p>Michele Ruta: michele.ruta@poliba.it</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="panel_committee" class="panel">
+			<div class="panel-header">
+				<h1>Organizing Committee</h1>
+			</div>
+			<div class="panel-content">
+				<div class="section">
+					<div class="section-header">General Chairs</div>
+					<div class="section-content"><p><a href="http://cs.adelaide.edu.au/~qsheng/">Michael Sheng</a>, The University of Adelaide, Australia</p></div>
+					<div class="section-content"><p><a href="http://cs.acadiau.ca/~eshakshu/CIDS/index2.htm">Elhadi Shakshuki</a>, Acadia University, Canada</p></div>
+				</div>
+				<div class="section">
+					<div class="section-header">Program Chairs</div>
+					<div class="section-content">
+					    <p><a href="http://yongruiqin.org/">Yongrui (Louie) Qin</a>, University of Huddersfield, United Kingdom</p>
+					    <p><a href="http://sisinflab.poliba.it/ruta">Michele Ruta</a>, Technical University of Bari, Italy</p>
+						
+					</div>
+				</div>
+				<div class="section">
+					<div class="section-header">Publicity Chair</div>
+					<div class="section-content">
+					    <p><a href="http://xianzhiwang.weebly.com/">Xianzhi Wang</a>, UNSW, Australia</p>
+					</div>
+				</div>
+				<div class="section">
+					<div class="section-header">Program Committee</div>
+					<li>Luigi Atzori (University of Cagliari, Italy)</li>
+					<li>M. Victoria Bueno-Delgado (Technical University of Cartagena, Spain)</li>
+					<li>Suparna De (University of Surrey, United Kingdom)</li>
+					<li>Prem Prakash Jayaraman (Swinburne University of Technology, Australia)</li>
+					<li>Kewen Liao (Swinburne University of Technology, Australia)</li>
+					<li>Xiufeng Liu (Technical University of Denmark, Denmark)</li>
+					<li>Giuseppe Loseto (Technical University of Bari, Italy)</li>
+					<li>Konstantinos Markantonakis (Royal Holloway University of London, United Kingdom)</li>
+					<li>Simon Parkinson (University of Huddersfield, United Kingdom)</li>
+					<li>Wenjie Ruan (The University of Adelaide, Australia)</li>
+					<li>Damien Sauveron ( University of Limoges/CNRS, France)</li>
+					<li>Floriano Scioscia  (Technical University of Bari, Italy)</li>
+					<li>Nguyen Khoi Tran (The University of Adelaide, Australia)</li>
+					<li>Fusheng Wang (Emory University, USA)</li>
+					<li>Laurence T. Yang (St. Francis Xavier University, Canada)</li>
+					<li>Linda Yang (University of Portsmouth, United Kingdom)</li>
+					<li>Lina Yao (UNSW, Australia)</li>
+					<li>Jian Yu (Auckland University of Technology, New Zealand)</li>
+					<li>Wei Emma Zhang (The University of Adelaide, Australia)</li>
+					
+					<!-- 
+					
+					-------------------------
+					
+					<li>Xue Li (The University of Queensland, Australia)</li>
+					<li>Weifa Liang (The Australian National University, Australia)</li>
+					-->
+								
+					<div class="section-content">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="panel_dates" class="panel">
+			<div class="panel-header">
+				<h1>Important Dates</h1>
+			</div>
+			<div class="panel-content">
+				<ul style="list-style:none;padding:0;margin:0;">
+					<li>
+						<div class="dateMarch calendar">
+							<div class="date-month">Jan</div>
+							<div class="date-day">22</div>
+						</div>			
+						<p style="height:50px;padding-top:15px;">Paper Submission: December 15, 2017</p>
+					</li>
+					<li>
+						<div class="dateMay calendar">
+							<div class="date-month">Feb</div>
+							<div class="date-day">13</div>
+						</div>			
+						<p style="height:50px;padding-top:15px;">Author's Notification: Feb 5, 2018</p>
+					</li>
+					<li>
+						<div class="dateJune calendar">
+							<div class="date-month">Mar</div>
+							<div class="date-day">13</div>
+						</div>			
+						<p style="height:50px;padding-top:15px;">Final Manuscipt: Mar 5, 2018</p>						
+					</li>															
+				</ul>
+			</div>
+		</div>
+		<div id="panel_submission" class="panel">
+			<div class="panel-header">
+				<h1>Paper Submission</h1>
+			</div>
+			<div class="panel-content">
+				<p>Every submitted paper will be carefully reviewed by at least three members of the International Program Committee. All accepted papers will be published by Elsevier Science in the open-access Procedia Computer Science series (on-line and CD).</p>
+				<div class="section">
+					<div class="section-header">Paper Length & Format</div>
+					<div class="section-content">
+						<p>Authors should submit the papers with no more than 6 pages length including all figures, tables and references. The submitted paper must be formatted according to the guidelines of guidelines of <a href="http://www.elsevier.com/wps/find/journaldescription.cws_home/719435/description#description">Procedia Computer Science</a>, <a target="_blank" href="http://cs-conferences.acadiau.ca/ant-15/templates/ANT15_PROCS_Template.docm">MS Word Template</a>, <a target="_blank" href="http://cs-conferences.acadiau.ca/ant-15/templates/ecrc-procs.rar">Latex</a>, Elsevier. Authors are requested to submit their papers electronically using the <a target="_blank" href="http://www.easychair.org/conferences/?conf=iupt2015">online conference management system</a> in PDF format before the deadline.</p>
+					</div>
+				</div>
+				<div class="section">
+					<div class="section-header">Submission System</div>
+					<div class="section-content">
+						<p>The submission processes will be managed by <a target="_blank" href="http://www.easychair.org/conferences/?conf=iupt2018">easychair.org</a> (Will be setup soon). If you have used this system before, you can use the same username and password. If this is your first time using EasyChair, you will need to register for an account by clicking "I have no EasyChair account" button. Upon completion of registration, you will get a notification email from the system and you are ready for submitting your paper. You can upload and re-upload the paper to the system by the submission due date.</p>
+					</div>
+				</div>
+				<div class="section">
+					<div class="section-header">Publication</div>
+					<div class="section-content">
+						<p>All papers accepted will be included in the ANT-2018 proceedings to be published by Elsevier. The authors must follow Elsevier guidelines as given in ANT-2018 website. The number of pages for symposium papers is limited to 6 pages. The selective outstanding papers presented at the workshops, after further revision, will be considered for publication in journals special issues.</p>
+				<p>Accepted papers will be included in the conference proceedings published by Elsevier Science in the open-access Procedia Computer Science series (on-line). Procedia Computer Sciences is hosted on www.Elsevier.com and on Elsevier content platform <a href="http://www.sciencedirect.com"><b><font color="#FF60AF">ScienceDirect</font></b></a>, and will be freely available worldwide. All papers in Procedia will also be indexed by <a href="http://www.scopus.com"><b><font color="#FF60AF">Scopus</font></b></a> and <a href="http://www.engineeringvillage.com"><b><font color="#FF60AF">Engineering Village (Ei) </font></b></a>. This includes <a href="http://www.ei.org/compendex"> <b><font color="#FF60AF">EI Compendex </font></b> </a>. The papers will contain linked references, XML versions and citable DOI numbers. You will be able to provide a hyperlink to all delegates and direct your conference website visitors to your proceedings. All accepted papers will also be indexed in <a href="http://dblp.uni-trier.de/"><b><font color="#FF60AF">DBLP</font></b></a>.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="panel_program" class="panel">
+			<div class="panel-header">
+				<h1>Program</h1>
+			</div>
+			<div class="panel-content">
+				<div class="section">
+					<div class="section-header">Will be Announced</div>
+				</div>
+			</div>
+		</div>
+			
+	</div>
+	<div id="footer"></div>
+</div>
+</body>
+</html>
