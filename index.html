@@ -5,111 +5,14 @@
 <title>IUPT 2018</title>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <link href="Content/site.css" rel="stylesheet" type="text/css" />
-<link href="Content/Fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
-<link href="Content/nivo-slider/nivo-slider.css" rel="stylesheet" type="text/css" />
-<link href="Content/nivo-slider/themes/default/default.css" rel="stylesheet" type="text/css" />
-<style type="text/css">
-.fancybox-next span {
-	right: -36px;
-}
-.fancybox-prev span {
-	left: -36px;
-}
-</style>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-<script src="Scripts/jquery.ba-hashchange.min.js" type="text/javascript"></script>
-<script src="Content/Fancybox/jquery.fancybox.js" type="text/javascript"></script>
-<script src="Content/nivo-slider/jquery.nivo.slider.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-$(function () {
-	$(".image-gallery").fancybox({
-		prevEffect: 'none',
-		nextEffect: 'none',
-		helpers: {
-			title: {
-				type: 'outside'
-			},
-			overlay: {
-				opacity: 0.8,
-				css: {
-					'background-color': '#000'
-				}
-			},
-			thumbs: {
-				width: 50,
-				height: 50
-			}
-		}
-	});
-
-	$('#slider').nivoSlider();
-
-	$(window).hashchange(function () {
-		var hash = window.location.hash.slice(2);
-		hashChangedHandler(hash);
-	});
-	$(window).hashchange();
-});
-
-function hashChangedHandler(hash) {
-	if (hash == "Home") {
-		switchPanel("#panel_home");
-	} else if (hash == "OrganizingCommittee") {
-		switchPanel("#panel_committee");
-	} else if (hash == "ImportantDates") {
-		switchPanel("#panel_dates");
-	} else if (hash == "PaperSubmission") {
-		switchPanel("#panel_submission");
-	}
-	else if (hash == "ProgramPage") {
-		switchPanel("#panel_program");
-	}
-}
-
-function switchPanel(currentSelector) {
-	$("#content").find(".current-panel").fadeOut(200, function () {
-		$("#content").find(".current-panel").removeClass("current-panel");
-		//console.log("current fadeout");
-		$(currentSelector).fadeIn(200, function () {
-			//console.log("new fadein");
-			$(currentSelector).addClass("current-panel");
-			$("html, body").animate({scrollTop:$(currentSelector).offset().top}, 500);
-			// $(document).scrollTop($(currentSelector).offset().top)
-		});
-	});
-}
-</script>
 </head>
 
 <body>
 <div id="wrap">
-	<div id="nav_container">
-		<ul>
-			<li class="main-menu"><a href="#/Home">Home</a></li>
-			<li class="separator"></li>
-			<li class="main-menu"><a href="#/OrganizingCommittee">Organizing Committee</a></li>
-			<li class="separator"></li>
-			<li class="main-menu"><a href="#/ImportantDates">Important Dates</a></li>
-			<li class="separator"></li>
-			<li class="main-menu"><a href="#/PaperSubmission">Paper Submission</a></li>
-			<li class="separator"></li>
-			<li class="main-menu"><a href="#/ProgramPage">Program</a></li>
-			<li class="separator"></li>
-			<li class="main-menu"><a href="http://cs-conferences.acadiau.ca/ant-18">ANT2018</a></li>
-		</ul>
-
-	</div>
 	<div id="header">
 		<div class="slider-wrapper theme-default">
-			<div id="slider" class="nivoSlider">
-				<img src="pictures/porto1.jpg" alt="" height="600" width="900"/>
-				<img src="pictures/porto2.jpg" alt="" height="600" width="900"/>
-				<img src="pictures/porto3.jpg" alt="" height="600" width="900"/>
-				<img src="pictures/porto4.jpg" alt="" height="600" width="900"/>
-			</div>
-			
+				<img src="pictures/porto2.jpg" alt="" height="600" width="900"/>			
 		</div>
 		<div id="header_text" style="position:absolute;top:20px;left:20px;right:20px;color:#ffffff;z-index:9999;text-shadow:0 0 5px #000000;">The 8<sup>th</sup> International Symposium on<br />Internet of Ubiquitous and Pervasive Things<br/><strong>(IUPT 2018)</strong></div>
 	</div>
@@ -163,7 +66,65 @@ function switchPanel(currentSelector) {
 				</div>
 			</div>
 		</div>
-		<div id="panel_committee" class="panel">
+		<div id="panel_dates" class="panel current-panel">
+			<div class="panel-header">
+				<h1>Important Dates</h1>
+			</div>
+			<div class="panel-content">
+				<ul style="list-style:none;padding:0;margin:0;">
+					<li>
+						<div class="dateMarch calendar">
+							<div class="date-month">Jan</div>
+							<div class="date-day">22</div>
+						</div>			
+						<p style="height:50px;padding-top:15px;">Paper Submission: December 15, 2017</p>
+					</li>
+					<li>
+						<div class="dateMay calendar">
+							<div class="date-month">Feb</div>
+							<div class="date-day">13</div>
+						</div>			
+						<p style="height:50px;padding-top:15px;">Author's Notification: Feb 5, 2018</p>
+					</li>
+					<li>
+						<div class="dateJune calendar">
+							<div class="date-month">Mar</div>
+							<div class="date-day">13</div>
+						</div>			
+						<p style="height:50px;padding-top:15px;">Final Manuscipt: Mar 5, 2018</p>						
+					</li>															
+				</ul>
+			</div>
+		</div>
+		<div id="panel_submission" class="panel current-panel">
+			<div class="panel-header">
+				<h1>Paper Submission</h1>
+			</div>
+			<div class="panel-content">
+				<p>Every submitted paper will be carefully reviewed by at least three members of the International Program Committee. All accepted papers will be published by Elsevier Science in the open-access Procedia Computer Science series (on-line and CD).</p>
+				<div class="section">
+					<div class="section-header">Paper Length & Format</div>
+					<div class="section-content">
+						<p>Authors should submit the papers with no more than 6 pages length including all figures, tables and references. The submitted paper must be formatted according to the guidelines of guidelines of <a href="http://www.elsevier.com/wps/find/journaldescription.cws_home/719435/description#description">Procedia Computer Science</a>, <a target="_blank" href="http://cs-conferences.acadiau.ca/ant-15/templates/ANT15_PROCS_Template.docm">MS Word Template</a>, <a target="_blank" href="http://cs-conferences.acadiau.ca/ant-15/templates/ecrc-procs.rar">Latex</a>, Elsevier. Authors are requested to submit their papers electronically using the <a target="_blank" href="http://www.easychair.org/conferences/?conf=iupt2015">online conference management system</a> in PDF format before the deadline.</p>
+					</div>
+				</div>
+				<div class="section">
+					<div class="section-header">Submission System</div>
+					<div class="section-content">
+						<p>The submission processes will be managed by <a target="_blank" href="http://www.easychair.org/conferences/?conf=iupt2018">easychair.org</a> (Will be setup soon). If you have used this system before, you can use the same username and password. If this is your first time using EasyChair, you will need to register for an account by clicking "I have no EasyChair account" button. Upon completion of registration, you will get a notification email from the system and you are ready for submitting your paper. You can upload and re-upload the paper to the system by the submission due date.</p>
+					</div>
+				</div>
+				<div class="section">
+					<div class="section-header">Publication</div>
+					<div class="section-content">
+						<p>All papers accepted will be included in the ANT-2018 proceedings to be published by Elsevier. The authors must follow Elsevier guidelines as given in ANT-2018 website. The number of pages for symposium papers is limited to 6 pages. The selective outstanding papers presented at the workshops, after further revision, will be considered for publication in journals special issues.</p>
+				<p>Accepted papers will be included in the conference proceedings published by Elsevier Science in the open-access Procedia Computer Science series (on-line). Procedia Computer Sciences is hosted on www.Elsevier.com and on Elsevier content platform <a href="http://www.sciencedirect.com"><b><font color="#FF60AF">ScienceDirect</font></b></a>, and will be freely available worldwide. All papers in Procedia will also be indexed by <a href="http://www.scopus.com"><b><font color="#FF60AF">Scopus</font></b></a> and <a href="http://www.engineeringvillage.com"><b><font color="#FF60AF">Engineering Village (Ei) </font></b></a>. This includes <a href="http://www.ei.org/compendex"> <b><font color="#FF60AF">EI Compendex </font></b> </a>. The papers will contain linked references, XML versions and citable DOI numbers. You will be able to provide a hyperlink to all delegates and direct your conference website visitors to your proceedings. All accepted papers will also be indexed in <a href="http://dblp.uni-trier.de/"><b><font color="#FF60AF">DBLP</font></b></a>.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="panel_committee" class="panel current-panel">
 			<div class="panel-header">
 				<h1>Organizing Committee</h1>
 			</div>
@@ -219,63 +180,6 @@ function switchPanel(currentSelector) {
 								
 					<div class="section-content">
 						
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="panel_dates" class="panel">
-			<div class="panel-header">
-				<h1>Important Dates</h1>
-			</div>
-			<div class="panel-content">
-				<ul style="list-style:none;padding:0;margin:0;">
-					<li>
-						<div class="dateMarch calendar">
-							<div class="date-month">Jan</div>
-							<div class="date-day">22</div>
-						</div>			
-						<p style="height:50px;padding-top:15px;">Paper Submission: December 15, 2017</p>
-					</li>
-					<li>
-						<div class="dateMay calendar">
-							<div class="date-month">Feb</div>
-							<div class="date-day">13</div>
-						</div>			
-						<p style="height:50px;padding-top:15px;">Author's Notification: Feb 5, 2018</p>
-					</li>
-					<li>
-						<div class="dateJune calendar">
-							<div class="date-month">Mar</div>
-							<div class="date-day">13</div>
-						</div>			
-						<p style="height:50px;padding-top:15px;">Final Manuscipt: Mar 5, 2018</p>						
-					</li>															
-				</ul>
-			</div>
-		</div>
-		<div id="panel_submission" class="panel">
-			<div class="panel-header">
-				<h1>Paper Submission</h1>
-			</div>
-			<div class="panel-content">
-				<p>Every submitted paper will be carefully reviewed by at least three members of the International Program Committee. All accepted papers will be published by Elsevier Science in the open-access Procedia Computer Science series (on-line and CD).</p>
-				<div class="section">
-					<div class="section-header">Paper Length & Format</div>
-					<div class="section-content">
-						<p>Authors should submit the papers with no more than 6 pages length including all figures, tables and references. The submitted paper must be formatted according to the guidelines of guidelines of <a href="http://www.elsevier.com/wps/find/journaldescription.cws_home/719435/description#description">Procedia Computer Science</a>, <a target="_blank" href="http://cs-conferences.acadiau.ca/ant-15/templates/ANT15_PROCS_Template.docm">MS Word Template</a>, <a target="_blank" href="http://cs-conferences.acadiau.ca/ant-15/templates/ecrc-procs.rar">Latex</a>, Elsevier. Authors are requested to submit their papers electronically using the <a target="_blank" href="http://www.easychair.org/conferences/?conf=iupt2015">online conference management system</a> in PDF format before the deadline.</p>
-					</div>
-				</div>
-				<div class="section">
-					<div class="section-header">Submission System</div>
-					<div class="section-content">
-						<p>The submission processes will be managed by <a target="_blank" href="http://www.easychair.org/conferences/?conf=iupt2018">easychair.org</a> (Will be setup soon). If you have used this system before, you can use the same username and password. If this is your first time using EasyChair, you will need to register for an account by clicking "I have no EasyChair account" button. Upon completion of registration, you will get a notification email from the system and you are ready for submitting your paper. You can upload and re-upload the paper to the system by the submission due date.</p>
-					</div>
-				</div>
-				<div class="section">
-					<div class="section-header">Publication</div>
-					<div class="section-content">
-						<p>All papers accepted will be included in the ANT-2018 proceedings to be published by Elsevier. The authors must follow Elsevier guidelines as given in ANT-2018 website. The number of pages for symposium papers is limited to 6 pages. The selective outstanding papers presented at the workshops, after further revision, will be considered for publication in journals special issues.</p>
-				<p>Accepted papers will be included in the conference proceedings published by Elsevier Science in the open-access Procedia Computer Science series (on-line). Procedia Computer Sciences is hosted on www.Elsevier.com and on Elsevier content platform <a href="http://www.sciencedirect.com"><b><font color="#FF60AF">ScienceDirect</font></b></a>, and will be freely available worldwide. All papers in Procedia will also be indexed by <a href="http://www.scopus.com"><b><font color="#FF60AF">Scopus</font></b></a> and <a href="http://www.engineeringvillage.com"><b><font color="#FF60AF">Engineering Village (Ei) </font></b></a>. This includes <a href="http://www.ei.org/compendex"> <b><font color="#FF60AF">EI Compendex </font></b> </a>. The papers will contain linked references, XML versions and citable DOI numbers. You will be able to provide a hyperlink to all delegates and direct your conference website visitors to your proceedings. All accepted papers will also be indexed in <a href="http://dblp.uni-trier.de/"><b><font color="#FF60AF">DBLP</font></b></a>.</p>
 					</div>
 				</div>
 			</div>
